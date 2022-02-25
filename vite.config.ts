@@ -8,5 +8,7 @@ export default defineConfig({
   // The project is built locally because I don't want to bother with a CI workflow on a demo project
   build: {
     outDir: "docs"
-  }
+  },
+  // base url to resolve assets
+  base: '/demo-vue3-landingFish/'
 })
