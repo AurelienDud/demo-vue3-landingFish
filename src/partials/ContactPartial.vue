@@ -49,11 +49,16 @@
   .contact-container {
     padding: var(--base-padding);
   }
-
+  
   .contact-title {
     font-family: var(--font-secondary);
     font-size: 2rem;
     margin-bottom: 0.75rem;
+  }
+  @media (max-width: 600px) {
+    .contact-title {
+      text-align: center;
+    }
   }
 
   .contact-subtitle {
@@ -69,7 +74,7 @@
 
   .contact-field-group {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
     align-items: center;
   }
@@ -88,6 +93,7 @@
 
   .contact-field-writable {
     flex: 1;
+    width: 100%;
     border-radius: 0.75rem;
     color: var(--color);
     background: transparent;

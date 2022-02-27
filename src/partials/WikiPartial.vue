@@ -8,7 +8,7 @@
 
   // constants
   const PAR_COUNT = 3
-  const FETCH_TIMER = 1500
+  const FETCH_TIMER = 1000
 
   // store
   const store = useStore(key)
@@ -99,9 +99,19 @@
     flex-direction: row;
     justify-content: space-around;
   }
+  @media (max-width: 600px) {
+   .wiki-values { 
+      flex-direction: column;
+      align-items: center;
+    }  
+  }
   .wiki-value {
-    max-width: 6rem;
     margin: 1rem;
+  }
+  @media (min-width: 600px) {
+    .wiki-value {
+      max-width: 6rem;
+    }
   }
   .wiki-value-img {
     display: block;
@@ -120,7 +130,7 @@
   .placeholder-wiki {
     height: 8rem;
   }
-  @media (max-width: var(--breakpoint-mobile)) {
+  @media (max-width: 600px) {
    .placeholder-wiki {
       height: 12rem;
     } 

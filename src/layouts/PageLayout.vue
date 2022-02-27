@@ -71,7 +71,7 @@
     transform-origin: center;
     transform: translate(100vw, 20vh) scale(0.5);
     transition-property: all;
-    transition-duration: 1.2s;
+    transition-duration: 1s;
     transition-timing-function: ease-in-out;
     transition-delay: 0s;
   }
@@ -94,7 +94,7 @@
     flex-direction: column;
     justify-content: space-between;
     width: 100vw;
-    min-height: 100vh;
+    height: 100vh;
   }
 
   .first-container:before {
@@ -130,8 +130,6 @@
   /* Second view */
   /* ---------- */
   .hero-pos2 {
-    /* width: 120vmin; */
-    /* height: calc(var(--hero-ratio) * 120%); */
     transform: translate(-55%, calc(40vh - 25%)) rotate(85deg) scale(1.2);
   }
 
@@ -139,11 +137,11 @@
     width: calc(100vw - 50vmin);
     height: 100%;
     min-height: 100vh;  
-    transform: translateX(25vmin)
+    transform: translateX(15vmin)
   }
   @media (orientation: portrait) {
     .second-content {
-      width: calc(100vw - 25vmin);
+      width: calc(100vw - 15vmin);
     }
   }
 
@@ -187,9 +185,10 @@
       min-height: 50vh;
     }
   }
-
-  .third-main {
-    max-width: calc(var(--max-container-width) / 2);
+  @media (orientation: landscape) {
+    .third-main {
+      max-width: calc(var(--max-container-width) / 2);
+    }
   }
 
   .third-side {
@@ -199,6 +198,11 @@
   .third-card {
     width: 60vmin; 
     height: 60vmin;
+  }
+  @media (orientation: portait) {
+    .third-card {
+      height: 40vmax;
+    }
   }
 </style>
 

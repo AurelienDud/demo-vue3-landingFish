@@ -40,7 +40,7 @@
     --zindex-hero: 100;
     --max-container-width: 870px;
     --base-padding: 1rem;
-    --breakpoint-mobile: 600px;
+    --base-font-size: 16px;
     --color: #b8d1e3;
     --bg: #cfdae2;
     --bg_variant_1: #0075bd;
@@ -49,12 +49,22 @@
     --font-primary: 'Work Sans', sans-serif;
     --font-secondary: 'Oleo Script', cursive;
   }
+  @media (max-width: 600px) {
+    :root {
+      --base-padding: 1.5rem;
+      --base-font-size: 20px;
+    }
+  }
 
   /* reset */
   * {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
+  }
+
+  html, body {
+    width: 100%;
   }
 
   form, fieldset, 
@@ -66,14 +76,17 @@
     outline: unset;
   } 
 
+  html {
+    font-size: var(--base-font-size);
+    line-height: 1.5;
+    font-family: var(--font-primary);
+    color: var(--color);
+  }
+
   /* base */
   body {
     box-sizing: border-box;
     overflow-x: hidden;
-    color: var(--color);
-    font-size: 16px;
-    line-height: 1.5;
-    font-family: var(--font-primary);
     background: var(--bg_variant_1);
     background-size: cover;
     background-image: linear-gradient(148deg, var(--bg_variant_1) 0%, var(--bg_variant_2) 100%);
