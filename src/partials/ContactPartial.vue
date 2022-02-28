@@ -9,15 +9,15 @@
 </script>
 
 <template>
-  <div class="contact-container">
-    <h2 class="contact-title">
+  <div :class="$style.contactContainer">
+    <h2 :class="$style.contactTitle">
       Support a Bluefin!
     </h2>
-    <p class="contact-subtitle">
+    <p :class="$style.contactSubtitle">
       Your donation will help in the conservation of Bluefin tuna in the oceans
     </p>
-    <form @submit="handleSubmit($event)" class="contact-form">
-      <fieldset class="contact-field-group">
+    <form @submit="handleSubmit($event)" :class="$style.contactForm">
+      <fieldset :class="$style.contactFieldGroup">
         <datalist id="contact-field-money">
           <option value="10" />
           <option value="100" />
@@ -25,7 +25,7 @@
           <option value="1000" />
         </datalist>
         <input 
-          class="contact-field-group-item contact-field-writable"
+          :class="[$style.contactFieldGroupItem, $style.contactFieldWritable]"
           type="number" 
           min="1"
           step="1"
@@ -36,7 +36,7 @@
           required
         /> 
         <input 
-          class="contact-field-group-item contact-field-action"
+          :class="[$style.contactFieldGroupItem, $style.contactFieldAction]"
           type="submit" 
           value="Donate" 
         />
@@ -45,72 +45,58 @@
   </div>
 </template>
 
-<style scoped>
-  .contact-container {
+<style module lang="scss">
+  @use '../assets/styles/features.scss' as *;
+
+  .contactContainer {
     padding: var(--base-padding);
   }
   
-  .contact-title {
+  .contactTitle {
     font-family: var(--font-secondary);
     font-size: 2rem;
     margin-bottom: 0.75rem;
-  }
-  @media (max-width: 600px) {
-    .contact-title {
+    @include media-phone {
       text-align: center;
     }
   }
 
-  .contact-subtitle {
+  .contactSubtitle {
     font-weight: bolder;
     font-size: 0.9rem;
     margin-bottom: 1rem;
   }
 
-  ::placeholder {
-    color: var(--color);
-    font-size: 1.1rem;
-  }
-
-  .contact-field-group {
+  .contactFieldGroup {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     align-items: center;
+    &Item + &Item {
+      margin-left: 1rem;
+    }
   }
 
-  .contact-field-group-item + .contact-field-group-item {
-    margin-left: 1rem;
-  }
-
-  .contact-field-writable,
-  .contact-field-action {
+  .contactFieldWritable,
+  .contactFieldAction {
+    padding: var(--base-padding); 
     font-size: 1.1rem;
-    padding: calc(var(--base-padding) * 1);
     line-height: 1;
     border-radius: 0.75rem;
   }
 
-  .contact-field-writable {
+  .contactFieldWritable {
     flex: 1;
     width: 100%;
     border-radius: 0.75rem;
     color: var(--color);
     background: transparent;
-    background: var(--bg_variant_2);
+    background: var(--bg-primary-end);
     box-shadow: inset 7px 7px 15px #003157,
                 inset -7px -7px 15px #004375;
   }
 
-  .contact-field-action {
+  .contactFieldAction {
     min-width: 6rem;
-    cursor: pointer;
-    border-radius: 0.75rem;
-    color: var(--color);
-    background: linear-gradient(145deg, #003e6a, #004a7e);
-    box-shadow:  7px 7px 15px #003f6b,
-                -7px -7px 15px #004b81;
   }
-
-  
 </style>

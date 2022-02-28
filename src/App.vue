@@ -31,97 +31,48 @@
   </Page>
 </template>
 
-<style>
+<style lang="scss">
+  /* use custom SCSS features */
+  @use './assets/styles/features.scss' as *;
+
   /* fonts */
   @import url('https://fonts.googleapis.com/css2?family=Oleo+Script&family=Work+Sans:wght@400;500&display=swap');
 
-  /* variables */
-  :root {
-    --zindex-hero: 100;
-    --max-container-width: 870px;
-    --base-padding: 1rem;
-    --base-font-size: 16px;
-    --color: #b8d1e3;
-    --bg: #cfdae2;
-    --bg_variant_1: #0075bd;
-    --bg_variant_2: #003a66; 
-    --hero-ratio: 0.5;
-    --font-primary: 'Work Sans', sans-serif;
-    --font-secondary: 'Oleo Script', cursive;
-  }
-  @media (max-width: 600px) {
-    :root {
-      --base-padding: 1.5rem;
-      --base-font-size: 20px;
-    }
-  }
+  /* custom tiny CSS reset */
+  @import url('./assets/styles/reset.scss');
 
-  /* reset */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-  }
+  /* vue animations */
+  @import url('./assets/styles/vue_animations.scss');
 
-  html, body {
-    width: 100%;
-  }
+  /* theme */
+  @import url('./assets/styles/theme.scss');
 
-  form, fieldset, 
-  input, textarea,
-  input:hover, textarea:hover,
-  input:focus, textarea:focus {
-    display: block;
-    border: unset;
-    outline: unset;
-  } 
-
+  /* app */
   html {
-    font-size: var(--base-font-size);
-    line-height: 1.5;
-    font-family: var(--font-primary);
-    color: var(--color);
-  }
-
-  /* base */
-  body {
     box-sizing: border-box;
+    line-height: var(--base-line-height, 1);
+    font-size: var(--base-font-size, 16px);
+    font-family: var(--font-primary, inherit);
+    color: var(--color, white);
+  }
+
+  body {
     overflow-x: hidden;
-    background: var(--bg_variant_1);
-    background-size: cover;
-    background-image: linear-gradient(148deg, var(--bg_variant_1) 0%, var(--bg_variant_2) 100%);
-  } 
+    background: var(--bg-primary-start, blue);
+    background-image: linear-gradient(148deg, var(--bg-primary-start) 0%, var(--bg-primary-end) 100%);
+  }  
 
-  /* placeholder */
-  .placeholder {
-    display: inline-block;
-    width: 100%;
-    background: var(--bg_variant_2);
-    opacity: 0.6;
-    animation:placeholderEffect 2s alternate infinite;
+  button, 
+  input[type="button"], 
+  input[type="submit"] {
+    padding: var(--base-padding);
+    line-height: 1;
+    border-radius: 0.75rem;
+    font-size: 1.1rem;
+    color: var(--color);
+    background: linear-gradient(145deg, #00000015, #FFFFFF15);
+    box-shadow:  7px 7px 15px #00000010,
+                -7px -7px 15px #FFFFFF10;
+    cursor: pointer;
   }
-
-  @keyframes placeholderEffect{
-    from {
-      opacity: 0.6
-    }
-    to {
-      opacity: 0.3
-    }
-  }
-
-  /* vue transition */
-  .replace-enter-active {
-    transition: opacity 0.8s ease-out;
-  }
-
-  .replace-enter-from {
-    opacity: 0;
-  }
-  
-  .replace-leave-to {
-    display: none;
-  }
-
-
 </style>

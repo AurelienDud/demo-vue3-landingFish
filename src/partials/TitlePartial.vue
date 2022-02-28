@@ -2,14 +2,14 @@
 </script>
 
 <template>
-  <p class="title">
+  <p :class="$style.title">
     Discovering the Bluefin fish
   </p>
 </template>
 
-<style scoped>
+<style module lang="scss">
   .title {
-    padding: 1.5rem;
+    padding: calc(var(--base-padding) * 1.5);
     margin: auto auto 0;
     font-family: var(--font-secondary);
     text-align: center;

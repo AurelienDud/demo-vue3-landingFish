@@ -1,0 +1,23 @@
+/* element replacing transition */
+.replace-enter-active {
+  transition: opacity 0.8s ease-out;
+}
+
+.replace-enter-from {
+  opacity: 0;
+}
+
+.replace-leave-to {
+  display: none;
+}
+
+/* default transition */
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}

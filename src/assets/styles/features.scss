@@ -1,0 +1,25 @@
+/* Media queries */
+
+@mixin media-portrait {
+  @media (orientation: portrait) { 
+    @content; 
+  }
+}
+
+@mixin media-landscape {
+  @media (orientation: landscape) { 
+    @content; 
+  }
+}
+
+@mixin media-phone {
+  @media (max-width: 599px), (orientation: portrait) { 
+    @content; 
+  }
+}
+
+@mixin media-desktop {
+  @media (min-width: 600px) and (orientation: landscape) { 
+    @content; 
+  }
+}

@@ -1,0 +1,23 @@
+@use './features.scss' as *;
+
+:root {
+  --base-padding: 1rem;
+  --base-font-size: 16px;
+  --base-line-height: 1.5;
+  --zindex-hero: 100;
+  --max-container-width: 870px;  
+  --color: #b8d1e3;
+  --bg-content: #cfdae2;
+  --bg-primary-start: #0075bd;
+  --bg-primary-middle: #005690;
+  --bg-primary-end: #003a66; 
+  --font-primary: 'Work Sans', sans-serif;
+  --font-secondary: 'Oleo Script', cursive;
+}
+
+@include media-phone {
+  :root {
+    --base-padding: 1.5rem;
+    --base-font-size: 20px;
+  }
+}

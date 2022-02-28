@@ -55,5 +55,5 @@
   </div>
 </template>
 
-<style scoped>
+<style module>
 </style>

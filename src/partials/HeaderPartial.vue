@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="header">
+  <div :class="$style.header">
     <img 
       src="../assets/images/bluefin6.png" 
       alt="Bluefin logo" 
@@ -10,9 +10,9 @@
   </div>
 </template>
 
-<style scoped>
+<style module lang="scss">
   .header {
     margin: 0 auto auto;
-    padding: 1rem;
+    padding: var(--base-padding);
   }
 </style>

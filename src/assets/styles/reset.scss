@@ -1,0 +1,25 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html, body {
+  width: 100%;
+}
+
+button,
+form, 
+fieldset, 
+input, 
+textarea {
+  display: block;
+  border: unset;
+  outline: unset;
+}
+
+::placeholder {
+  color: inherit;
+  font-size: 1.1rem;
+}

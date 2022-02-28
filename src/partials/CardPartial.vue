@@ -17,7 +17,7 @@
     width: 100%;
     height: 100%;
     transform: rotateX(15deg);
-    background: var(--bg);
+    background: var(--bg-content);
     border-radius: 1rem;
     box-shadow: 20px 20px 60px #002a4a,
              -20px -20px 60px #004a82;
